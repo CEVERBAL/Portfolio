@@ -1,0 +1,315 @@
+/* 1. Variables globales */
+:root {
+    --primary-color: #2D2A32;
+    --background-color: #E7E7E7;
+    --highlight-color: #7CFF50;
+    --font-family: "Inter", sans-serif;
+}
+
+/* 2. Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    overflow-x: hidden;
+}
+
+/* 3. Typographie globale */
+h1, h2, p {
+    font-family: var(--font-family);
+}
+
+/* 4. Structure de mise en page */
+
+/* Navbar */
+.menu_navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 0.2vw;
+    z-index: 1000;
+}
+
+.menu_navbar a {
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    margin: 0.4vw;
+}
+
+.logo svg {
+    height: 5vh;
+}
+
+/* Hero Section */
+.hero_sec {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 80vh;
+    width: 100%;
+}
+
+.hero_sec_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.hero_sec svg,
+.hero_sec img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+/* Headline Section */
+.headline_section {
+    padding-top: 80vh;
+    text-align: center;
+}
+
+.headline_section h1 {
+    font-size: 5vw;
+    line-height: 0.8;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.headline_section p {
+    padding-left: 0.5vw;
+    font-size: 1.4rem;
+    text-align: left;
+    color: var(--primary-color);
+}
+
+/* Main Content */
+.main_content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding-top: 25vh;
+}
+
+.main_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.main_inner p {
+    font-weight: 450;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-bottom: 2vh;
+}
+
+.main_inner h2 {
+    font-weight: 700;
+    font-size: 4.313rem;
+    letter-spacing: 0.6px;
+    line-height: 0.9;
+    padding-bottom: 3vh;
+    margin-left: 6.738vw;
+    margin-right: 6.738vw;
+}
+
+/* Projects Showcase */
+.projects_showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects_showcase p {
+    font-weight: 450;
+    font-size: 1.4rem;
+    width: 100vw;
+    text-align: left;
+    padding-left: 1vw;
+    padding-top: 1vh;
+}
+
+.project_item {
+    position: relative;
+    width: 100vw;
+    height: 12vh;
+    overflow: hidden;
+    border: 0.1vh solid #707070;
+}
+
+.project_front h2,
+.project_back h2 {
+    margin: 0 5vh;
+    font-weight: 700;
+    font-size: 4.313rem;
+    letter-spacing: 0.6px;
+}
+
+.project_front,
+.project_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.project_back {
+    transform: translateY(100%);
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.project_item:hover .project_front {
+    transform: translateY(-100%);
+}
+
+.project_item:hover .project_back {
+    transform: translateY(0);
+}
+
+/* Contact Section */
+.contact_section {
+    padding-top: 7.4vh;
+}
+
+.contact_section p {
+    font-size: 1.4rem;
+    text-align: left;
+    padding-left: 1vw;
+    color: var(--primary-color);
+    padding-bottom: 6vh;
+}
+
+.contact_section h2 {
+    font-weight: 700;
+    font-size: 3.313rem;
+    letter-spacing: 0.6px;
+    line-height: 0.9;
+}
+
+.contact_item {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.contact_front,
+.contact_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease-in-out;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.contact_front {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.contact_back {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    transform: translateY(100%);
+}
+
+.contact_item:hover .contact_front {
+    transform: translateY(-100%);
+}
+
+.contact_item:hover .contact_back {
+    transform: translateY(0);
+}
+
+.contact_link {
+    padding-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contact_link a {
+    font-weight: 450;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact_link a:hover {
+    animation: wave 0.4s infinite;
+}
+
+/* 5. Animations */
+@keyframes wave {
+    0% {
+        transform: scaleX(1);
+        color: var(--primary-color);
+    }
+    25% {
+        transform: scaleX(1.1);
+        color: var(--highlight-color);
+    }
+    50% {
+        transform: scaleX(1.2);
+        color: var(--background-color);
+    }
+    75% {
+        transform: scaleX(1.1);
+        color: var(--highlight-color);
+    }
+    100% {
+        transform: scaleX(1);
+        color: var(--primary-color);
+    }
+}
+
+/* 6. Footer */
+.bottom_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.bottom_footer h2 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.6px;
+    color: var(--primary-color);
+}
